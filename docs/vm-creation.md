@@ -1,13 +1,7 @@
 # VM Creation
 
-## Downloading and extracting the image
-First of all, you will need to download the debian image using this [link](https://immfly-infra-technical-test.s3-eu-west-1.amazonaws.com/debian10-ssh.img.tar.xz).
-Then, we can extract the file we downloaded into some dicrectory that will need
-to be accessible by the libvirt user. In my case, to be fast, I created a /vms/
-directory and I extracted the image there. 
-
-In case you need to install and configure libvirt read the section below, if
-you already have it you can jump into the next section.
+Before starting, if we do not have libvirt installed in our system we will need
+to install it. Below you can find instructions to install it in Manjaro Linux.
 
 ## Installing libvirt (Majaro instructions)
 We are going to need to install the packages, to do so you will need sudo permission
@@ -34,6 +28,16 @@ sudo virsh net-start default
 We are ready to keep going with the rest of the documentation.
  
 ## Setting up permissions and importing the VM
+First of all, we are going to download and extract the VM disk so we can start
+creating the machine. To do so we are going to access to the root of this
+repository and execute the following commands:
+
+```
+mkdir /vms
+wget https://immfly-infra-technical-test.s3-eu-west-1.amazonaws.com/debian10-ssh.img.tar.xz
+tar -xf debian10-ssh.img.tar.xz -C /vms
+```
+
 We are going to change the owner of the debian image and the directory where we have
 extracted it. In my case I have used: 
 
