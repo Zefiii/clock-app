@@ -33,9 +33,10 @@ creating the machine. To do so we are going to access to the root of this
 repository and execute the following commands:
 
 ```
-mkdir /vms
+sudo mkdir /vms
 wget https://immfly-infra-technical-test.s3-eu-west-1.amazonaws.com/debian10-ssh.img.tar.xz
-tar -xf debian10-ssh.img.tar.xz -C /vms
+sudo tar -xf debian10-ssh.img.tar.xz -C /vms
+rm debian10-ssh.img.tar.xz
 ```
 
 We are going to change the owner of the debian image and the directory where we have
