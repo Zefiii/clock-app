@@ -1,0 +1,9 @@
+---
+- name: Install web server
+  hosts: web_server_1 
+  become: true
+  remote_user: root
+  tasks:
+    - name: Include web-server role
+      ansible.builtin.include_role:
+        name: "web_servers"

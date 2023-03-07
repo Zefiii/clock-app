@@ -1,0 +1,8 @@
+---
+
+- name: Include requisites installation
+  ansible.builtin.include_tasks: requeriments-intallation.yml
+
+- name: Include install application
+  ansible.builtin.include_tasks: install-application.yml
+

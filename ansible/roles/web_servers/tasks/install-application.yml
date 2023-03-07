@@ -1,0 +1,14 @@
+- name: Copy files
+  ansible.builtin.copy:
+    src: opt/clock-app
+    dest: /opt/
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Start application
+  community.docker.docker_compose:
+    project_src: /opt/clock-app
+    build: true
+  register: output
+
