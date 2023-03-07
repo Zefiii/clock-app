@@ -65,6 +65,7 @@ We are ready to import the image with:
 sudo virsh define assets/vm.xml
 sudo virsh start immfly-debian10
 ```
+*** NOTE: Some times with the define it launches the VM and it can give some troubles, in this case stop the vm with sudo virsh destroy immfly-debian10 and start it with the previous command***
 
 We should be able to see it running with the command:
 
