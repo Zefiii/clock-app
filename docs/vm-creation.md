@@ -63,6 +63,7 @@ We are ready to import the image with:
 
 ```
 sudo virsh define assets/vm.xml
+sudo virsh start immfly-debian10
 ```
 
 We should be able to see it running with the command:
@@ -74,31 +75,4 @@ We should be able to see it running with the command:
  2    immfly-debian10   ejecutando
 ```
 
-And we can get the ip to connect to the vm with:
-
-```
-❯ sudo virsh net-dhcp-leases default
- Expiry Time           dirección MAC       Protocol   IP address           Hostname   Client ID or DUID
-------------------------------------------------------------------------------------------------------------------------------------------------
- 2023-03-03 18:09:55   52:54:00:c0:e9:b1   ipv4       192.168.122.188/24   debian     ff:00:c0:e9:b1:00:01:00:01:26:56:9c:47:52:54:00:a3:08:2e
-
-```
-
-## Connecting to the VM
-
-If all the previous steps have worked as expected we should be ready to ssh into
-the machine. We need to change the permissions of the RSA key, as it has too 
-open permissions to work. We are going to execute:
-
-```
-sudo chown 640 assets/rsa
-```
-
-We are now 100% ready to access the machine with the command:
-
-```
-ssh -i assets/rsa root@<ip-you-got-from-the-virsh-command>
-```
-
-To keep going, please, start reading the application-deploy.md file.
-
+We are ready to deploy the app.
