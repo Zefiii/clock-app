@@ -75,4 +75,6 @@ We should be able to see it running with the command:
  2    immfly-debian10   ejecutando
 ```
 
-We are ready to deploy the app.
+We are ready to deploy the app. You can find the guide to do it here:
+
+* [App deploy](app-deploy.md)
